@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { ServerService } from '../server.service';
 
 @Component({
@@ -10,21 +10,37 @@ export class CarListComponent implements OnInit {
 
   cars : [] = []
 
-  
   constructor(private httpService : ServerService) { }
 
   ngOnInit() {
-    this.httpService.getCars()
+      this.httpService.getCars()
       .subscribe((cars) => {
         for(let i in cars){
           this.cars[i] = cars[i];
+          console.log(this.cars[i]);
         }
       });
+      
   };
 
-  getYil(i:number) {
+
+
+  getUcret(i:number){
     return this.cars[i];
   }
+
+  setUpdateID(id:number){
+    this.httpService.setId(id);
+  }
+
+  delete(id:number) {
+      this.httpService.deleteCars(id).subscribe((err) => {
+        if(!err) {
+          console.log("Başarıyla sonuçlandı");
+        }
+        console.log("BAŞARILI");
+      });
+  };
 
 
 

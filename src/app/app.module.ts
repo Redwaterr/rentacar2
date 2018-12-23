@@ -11,11 +11,13 @@ import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
 import { ServerService } from './server.service';
+import { UpdateCarComponent } from './car-list/update-car/update-car.component';
 
 const routesDirections = [
   {path:"",component:HomeComponent},
   {path:"cars",component:CarListComponent},
   {path:"carAdd",component:AddCarComponent},
+  {path:"updateCar",component:UpdateCarComponent},
   {path:"**",component:ErrorComponent}
 ]
 @NgModule({
@@ -24,7 +26,8 @@ const routesDirections = [
     CarListComponent,
     AddCarComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    UpdateCarComponent
   ],
   imports: [
     ReactiveFormsModule,

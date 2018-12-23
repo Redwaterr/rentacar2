@@ -13,7 +13,7 @@ export class AddCarComponent implements OnInit {
   carInput : FormGroup;
   car = {
     marka:String,
-    ücret:Number,
+    ucret:Number,
     yil:Number
   }
 
@@ -22,16 +22,16 @@ export class AddCarComponent implements OnInit {
   ngOnInit() {
     this.carInput = new FormGroup({
       "marka":new FormControl(null),
-      "ücret":new FormControl(null),
+      "ucret":new FormControl(null),
       "yil":new FormControl(null)
     });
   };
 
   onSubmit() {
     this.car = this.carInput.value;
-    this.httpService.addCars(this.car.ücret,this.car.marka,this.car.yil)
+    this.httpService.addCars(this.car.ucret,this.car.marka,this.car.yil)
       .subscribe((car) => {
-        console.log(car)
-      })
+        this.carInput.reset();
+      });
   };
 }
