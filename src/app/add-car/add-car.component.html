@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="carInput" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="marka">Marka</label>
+        <input
+          id="marka"
+          type="text"
+          class="form-control"
+          formControlName="marka">
+      </div>
+      <div class="form-group">
+          <label for="ücret">Ücret</label>
+          <input
+            id="ücret"
+            type="number"
+            class="form-control"
+            formControlName="ücret">
+        </div>
+        <div class="form-group">
+            <label for="yil">Yıl</label>
+            <input
+              id="yil"
+              type="number"
+              class="form-control"
+              formControlName="yil">
+          </div>
+        <button class="btn btn-primary" type="submit">Ekle</button>
+  </form>
+  </div>
+</div>

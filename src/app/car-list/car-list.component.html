@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Basic Car List</h2>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let car of cars; let i = index">
+      <div>  
+      <div>Marka: {{car.marka}}</div>
+        <div>Ucret: {{getYil(i)}}</div>
+        <div>Yil: {{car.yil}}</div>     
+        <span class="foto"><img class="img-responsive" width="200" height="200" src="https://i.hizliresim.com/Ln22Rb.jpg" alt="Chania"></span>
+    </div>
+      </li>
+  </ul>
+</div>
